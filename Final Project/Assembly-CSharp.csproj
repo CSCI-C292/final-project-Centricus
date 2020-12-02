@@ -39,8 +39,11 @@
      <Compile Include="Assets\Scripts\BaseStat.cs" />
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
      <Compile Include="Assets\Scripts\IWeapon.cs" />
+     <Compile Include="Assets\Scripts\InventoryController.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\PlayerWeaponController.cs" />
      <Compile Include="Assets\Scripts\StatBonus.cs" />
      <Compile Include="Assets\Scripts\Sword.cs" />
     <Reference Include="UnityEngine">
@@ -583,8 +586,23 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProGrids">
+        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -601,29 +619,14 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder">
-        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.Editor">
-        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids">
-        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-        <HintPath>C:/Users/COMS/Desktop/C292/final-project-Centricus/Final Project/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

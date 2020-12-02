@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/* 
+Class framework provided by GameGrind
+https://www.youtube.com/watch?v=7T4dFqT62Js&list=PLivfKP2ufIK6ToVMtpc_KTHlJRZjuE1z0&index=6
+*/
 
-    // Update is called once per frame
-    void Update()
+public class Sword : MonoBehaviour, IWeapon
+{
+    public List<BaseStat> stats { get; set; }
+
+    public void PerformAttack()
     {
-        
+        Debug.Log("Sword attack");
     }
 }

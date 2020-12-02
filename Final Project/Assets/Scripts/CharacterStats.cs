@@ -14,7 +14,21 @@ public class CharacterStats : MonoBehaviour
     void Start()
     {
         stats.Add(new BaseStat(4, "Power", "Your power level."));
-        stats[0].AddStatBonus(new StatBonus(5));
-        Debug.Log(stats[0].GetCalculatedStatValue());
+    }
+
+    public void AddStatBonus(List<BaseStat> baseStats)
+    {
+        foreach(BaseStat baseStat in baseStats)
+        {
+            stats.Find(x => x.statName == baseStat.statName).AddStatBonus(new StatBonus(baseStat.baseValue));
+        }
+    }
+
+    public void RemoveStatBonus(List<BaseStat> baseStats)
+    {
+        foreach(BaseStat baseStat in baseStats)
+        {
+            stats.Find(x => x.statName == baseStat.statName).RemoveStatBonus(new StatBonus(baseStat.baseValue));
+        }
     }
 }
