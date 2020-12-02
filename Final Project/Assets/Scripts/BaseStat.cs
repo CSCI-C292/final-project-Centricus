@@ -37,8 +37,9 @@ public class BaseStat
 
     public int GetCalculatedStatValue()
     {
+        this.FinalValue = 0;
         this.BaseAdditives.ForEach(x => this.FinalValue += x.BonusValue);
-        FinalValue += BaseValue;
+        this.FinalValue += this.BaseValue;
         return this.FinalValue;
     }
 }

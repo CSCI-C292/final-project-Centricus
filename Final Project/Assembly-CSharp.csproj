@@ -38,11 +38,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BaseStat.cs" />
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\IEnemy.cs" />
      <Compile Include="Assets\Scripts\IWeapon.cs" />
      <Compile Include="Assets\Scripts\InventoryController.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerWeaponController.cs" />
+     <Compile Include="Assets\Scripts\Slime.cs" />
      <Compile Include="Assets\Scripts\StatBonus.cs" />
      <Compile Include="Assets\Scripts\Sword.cs" />
     <Reference Include="UnityEngine">

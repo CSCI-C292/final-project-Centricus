@@ -14,8 +14,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Start() {
         stats.Add(new BaseStat(3, "Power", "Your power level."));
-        stats[0].AddStatBonus(new StatBonus(5));
-        Debug.Log(stats[0].GetCalculatedStatValue());
+        stats.Add(new BaseStat(2, "Vitality", "Your vitality level."));
     }
 
     public void AddStatBonus(List<BaseStat> statBonuses)

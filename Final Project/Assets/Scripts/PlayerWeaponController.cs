@@ -30,7 +30,7 @@ public class PlayerWeaponController : MonoBehaviour
         equippedWeapon.Stats = item.Stats;
         EquippedWeapon.transform.SetParent(playerHandRight.transform);
         characterStats.AddStatBonus(item.Stats);
-        Debug.Log(equippedWeapon.Stats[0]);
+        Debug.Log(equippedWeapon.Stats[0] + "THIS ONE");
     }
 
     public void PerformWeaponAttack()
