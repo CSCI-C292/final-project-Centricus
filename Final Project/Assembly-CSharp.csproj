@@ -38,12 +38,19 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BaseStat.cs" />
      <Compile Include="Assets\Scripts\CharacterStats.cs" />
+     <Compile Include="Assets\Scripts\EnemyFireball.cs" />
+     <Compile Include="Assets\Scripts\Fireball.cs" />
+     <Compile Include="Assets\Scripts\IEnemy.cs" />
+     <Compile Include="Assets\Scripts\IProjectileWeapon.cs" />
      <Compile Include="Assets\Scripts\IWeapon.cs" />
      <Compile Include="Assets\Scripts\InventoryController.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerWeaponController.cs" />
+     <Compile Include="Assets\Scripts\Slime.cs" />
+     <Compile Include="Assets\Scripts\Staff.cs" />
      <Compile Include="Assets\Scripts\StatBonus.cs" />
      <Compile Include="Assets\Scripts\Sword.cs" />
     <Reference Include="UnityEngine">

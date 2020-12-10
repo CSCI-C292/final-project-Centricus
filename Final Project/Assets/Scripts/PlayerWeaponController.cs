@@ -12,25 +12,40 @@ public class PlayerWeaponController : MonoBehaviour
     public GameObject playerHandRight;
     public GameObject equippedWeapon { get; set; }
 
+    Transform spawnProjectile;
     CharacterStats characterStats;
 
     void Start()
     {
-        characterStats = GetComponent<CharacterStats>();
+        spawnProjectile = transform.Find("ProjectileSpawn");
+        characterStats = GetComponent<Player>().characterStats;
     }
 
     public void EquipWeapon(Item itemToEquip)
     {
         if (equippedWeapon != null)
         {
-            characterStats.RemoveStatBonus(equippedWeapon.GetComponent<IWeapon>().stats);
+            // characterStats.RemoveStatBonus(equippedWeapon.GetComponent<IWeapon>().stats);
             Destroy(playerHandRight.transform.GetChild(0).gameObject);
         }
-        equippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/"+itemToEquip.objectSlug), 
-            playerHandRight.transform.position, playerHandRight.transform.rotation);
+        equippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/"+itemToEquip.objectSlug)/*, 
+            playerHandRight.transform.position, playerHandRight.transform.rotation*/);
+        if (equippedWeapon.GetComponent<IProjectileWeapon>() != null)
+        {
+            equippedWeapon.GetComponent<IProjectileWeapon>().projectileSpawn = spawnProjectile;
+        }
         equippedWeapon.GetComponent<IWeapon>().stats = itemToEquip.stats;
+        equippedWeapon.GetComponent<IWeapon>().characterStats = characterStats;
         equippedWeapon.transform.SetParent(playerHandRight.transform);
         characterStats.AddStatBonus(itemToEquip.stats);
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            PerformWeaponAttack();
+        }
     }
 
     public void PerformWeaponAttack()

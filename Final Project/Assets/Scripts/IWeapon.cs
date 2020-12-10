@@ -10,5 +10,6 @@ https://www.youtube.com/watch?v=7T4dFqT62Js&list=PLivfKP2ufIK6ToVMtpc_KTHlJRZjuE
 public interface IWeapon
 {
     List<BaseStat> stats { get; set; }
+    CharacterStats characterStats { get; set; }
     void PerformAttack();
 }

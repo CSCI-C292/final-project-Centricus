@@ -9,15 +9,19 @@ https://www.youtube.com/watch?v=wqEk5mzJB3M&list=PLivfKP2ufIK6ToVMtpc_KTHlJRZjuE
 
 public class BaseStat
 {
+    public enum BaseStatType { power, toughness, attackSpeed }
+
     public List<StatBonus> baseAdditives { get; set; }
+    public BaseStatType statType { get; set; }
     public int baseValue { get; set; }
     public string statName { get; set; }
     public string statDescription { get; set; }
     public int finalValue { get; set; }
 
-    public BaseStat(int baseValue, string statName, string statDescription)
+    public BaseStat(BaseStatType statType, int baseValue, string statName, string statDescription)
     {
         this.baseAdditives = new List<StatBonus>();
+        this.statType = statType;
         this.baseValue = baseValue;
         this.statName = statName;
         this.statDescription = statDescription;

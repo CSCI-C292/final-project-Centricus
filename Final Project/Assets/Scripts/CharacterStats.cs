@@ -7,20 +7,30 @@ Class provided by GameGrind
 https://www.youtube.com/watch?v=wqEk5mzJB3M&list=PLivfKP2ufIK6ToVMtpc_KTHlJRZjuE1z0&index=5
 */
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats
 {
     public List<BaseStat> stats = new List<BaseStat>();
 
-    void Start()
+    public CharacterStats(int power, int toughness, int attackSpeed)
     {
-        stats.Add(new BaseStat(4, "Power", "Your power level."));
+        stats = new List<BaseStat>() 
+        {
+            new BaseStat(BaseStat.BaseStatType.power, power, "Power", "Your power level."),
+            new BaseStat(BaseStat.BaseStatType.toughness, toughness, "Toughness", "Your toughness level."),
+            new BaseStat(BaseStat.BaseStatType.attackSpeed, attackSpeed, "Attack Speed", "Your Attack Speed."),
+        };
+    }
+
+    public BaseStat GetStat(BaseStat.BaseStatType stat)
+    {
+        return this.stats.Find(x => x.statType == stat);
     }
 
     public void AddStatBonus(List<BaseStat> baseStats)
     {
         foreach(BaseStat baseStat in baseStats)
         {
-            stats.Find(x => x.statName == baseStat.statName).AddStatBonus(new StatBonus(baseStat.baseValue));
+            GetStat(baseStat.statType).AddStatBonus(new StatBonus(baseStat.baseValue));
         }
     }
 
@@ -28,7 +38,7 @@ public class CharacterStats : MonoBehaviour
     {
         foreach(BaseStat baseStat in baseStats)
         {
-            stats.Find(x => x.statName == baseStat.statName).RemoveStatBonus(new StatBonus(baseStat.baseValue));
+            GetStat(baseStat.statType).RemoveStatBonus(new StatBonus(baseStat.baseValue));;
         }
     }
 }

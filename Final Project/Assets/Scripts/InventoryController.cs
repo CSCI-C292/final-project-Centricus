@@ -11,13 +11,15 @@ public class InventoryController : MonoBehaviour
 {
     public PlayerWeaponController playerWeaponController;
     public Item sword;
+    public Item staff;
 
     void Start()
     {
         playerWeaponController = GetComponent<PlayerWeaponController>();
         List<BaseStat> swordStats = new List<BaseStat>();
-        swordStats.Add(new BaseStat(6, "Power", "Your power level."));
+        swordStats.Add(new BaseStat(BaseStat.BaseStatType.power, 6, "Power", "The sword's power level."));
         sword = new Item(swordStats, "sword");
+        staff = new Item(swordStats, "staff");
     }
 
     void Update()
@@ -25,6 +27,10 @@ public class InventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             playerWeaponController.EquipWeapon(sword);
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            playerWeaponController.EquipWeapon(staff);
         }
     }
 
