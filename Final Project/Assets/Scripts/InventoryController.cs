@@ -17,18 +17,20 @@ public class InventoryController : MonoBehaviour
     {
         playerWeaponController = GetComponent<PlayerWeaponController>();
         List<BaseStat> swordStats = new List<BaseStat>();
-        swordStats.Add(new BaseStat(BaseStat.BaseStatType.power, 6, "Power", "The sword's power level."));
+        List<BaseStat> staffStats = new List<BaseStat>();
+        swordStats.Add(new BaseStat(BaseStat.BaseStatType.power, 10, "Power", "The sword's power level."));
+        staffStats.Add(new BaseStat(BaseStat.BaseStatType.power, 4, "Power", "The staff's power level."));
         sword = new Item(swordStats, "sword");
         staff = new Item(swordStats, "staff");
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             playerWeaponController.EquipWeapon(sword);
         }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             playerWeaponController.EquipWeapon(staff);
         }

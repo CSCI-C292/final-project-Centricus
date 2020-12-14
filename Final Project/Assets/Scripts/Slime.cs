@@ -13,6 +13,7 @@ public class Slime : MonoBehaviour, IEnemy
     public LayerMask aggroLayerMask;
     public float maxHealth;
     public string behavior;
+    [SerializeField] UIManager UIManager;
 
     private float currentHealth;
     private Player player;
@@ -25,6 +26,8 @@ public class Slime : MonoBehaviour, IEnemy
     void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        // navAgent.enabled = false;
+        // Invoke("EnableNavMeshAgent", 1f);
         characterStats = new CharacterStats(6, 10, 2);
         currentHealth = maxHealth;
         fireball = Resources.Load<EnemyFireball>("Weapons/Projectiles/enemyFireball");
@@ -32,12 +35,17 @@ public class Slime : MonoBehaviour, IEnemy
 
     void FixedUpdate()
     {
-        aggroColliders = Physics.OverlapSphere(transform.position, 10, aggroLayerMask);
+        aggroColliders = Physics.OverlapSphere(transform.position, 9001, aggroLayerMask);
         if (aggroColliders.Length > 0)
         {
             ChasePlayer(aggroColliders[0].GetComponent<Player>());
         }
     }
+
+    // private void EnableNavMeshAgent()
+    // {
+    //     navAgent.enabled = true;
+    // }   
 
     public void PerformAttack()
     {
@@ -88,5 +96,6 @@ public class Slime : MonoBehaviour, IEnemy
     void Die()
     {
         Destroy(gameObject);
+        UIManager.score++;
     }
 }

@@ -14,7 +14,7 @@ public class EnemyFireball : MonoBehaviour
     {
         Debug.Log("Fireball created");
         spawnPosition = transform.position;
-        damage = 4;
+        damage = 2;
         range = 20;
         GetComponent<Rigidbody>().AddForce(direction * 50f);
     }

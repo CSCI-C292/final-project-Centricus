@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
 Class provided by GameGrind
@@ -12,17 +13,19 @@ public class Player : MonoBehaviour
     public CharacterStats characterStats;
     public float currentHealth;
     public float maxHealth;
+    [SerializeField] UIManager UIManager;
 
     void Awake()
     {
-        characterStats = new CharacterStats(10, 10, 10);
+        characterStats = new CharacterStats(3, 3, 3);
         this.currentHealth = this.maxHealth;
+        UIManager.score = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        UIManager.currentHP = currentHealth;
+        UIManager.maxHP = maxHealth;
     }
 
     public void TakeDamage(int amount)
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player died: resetting health.");
+        SceneManager.LoadScene("GameOver");
         this.currentHealth = this.maxHealth;
     }
 }
